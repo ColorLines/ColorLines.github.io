@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color Lines</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body style="overflow:hidden; margin:0; padding:0;">
+
+<div id="container">
+<div>
+
+ <div class="pole">
+ <center>
+ <div style="background:#ccc; border:2px #eee solid; margin-top: 5px;">
+ <table width="100%"><tr><td>
+ <div id= "pleft" class="points-left">0</div>
+ </td><td>
+ <center>
+ <div id="next"></div>
+ </center>
+ </td>
+ <td>
+ <div id="pright" class="points-right">0</div>
+ </td></tr></table>
+ </div>
+ </center>
+
+ <div class="left">
+ <div id= "lname" class="name-left">Без имени</div>
+ <div id="korol" class="korol"></div>
+ <div id="bkorol" class="bgg1"></div>
+ <div class="bottom1"></div>
+ </div>
+
+ <div id="main"></div>
+
+ <div class="right">
+ <div id= "rname" class="name-right">Pretender</div>
+ <div id="voin" class="voin"></div>
+ <div id="bvoin" class="bgg2"></div>
+ <div class="bottom2"></div>
+ </div>
+
+ <table id="prav" class="lightface wind" tabindex="0">
+ <tbody>
+ <tr>
+ <td class="topLeft opac"></td>
+ <td class="topCenter opac"></td>
+ <td class="topRight opac"></td>
+ </tr>
+ <tr>
+ <td class="centerLeft opac"></td>
+
+ <td class="centerRight opac"></td></tr>
+ <tr><td class="bottomLeft opac"></td>
+ <td class="bottomCenter opac"></td>
+ <td class="bottomRight opac"></td></tr>
+ </tbody>
+ </table>
+ <script>
+ var max = 15000;
+ var maxName = 'King';
+ document.getElementById('pleft').innerHTML = max;
+ document.getElementById('lname').innerHTML =maxName;
+
+ function music(obj) {
+ if ($('#music').length > 0) {
+ $('#music').attr('id', 'music_off');
+ $(obj).text('Sound: Off');
+ } else {
+ $('#music_off').attr('id', 'music');
+ $(obj).text('Sound: On');
+ }
+ }
+
+
+ </script>
+ <div id="result_load">
+ </div>
+
+ </div>
+
+ <table id="regis" class="lightface wind" tabindex="0">
+ <tbody>
+ <tr>
+ <td class="topLeft opac"></td>
+ <td class="topCenter opac"></td>
+ <td class="topRight opac"></td>
+ </tr>
+ <tr>
+ <td class="centerLeft opac"></td>
+ <td class="centerCenter">
+ <div class="lightfaceContent">
+ <h2 class="lightfaceTitle lightfaceDraggable">Игра окончена</h2>
+ <div class="lightfaceMessageBox" style="height: auto;">
+ <p>
+
+</p>
+ </div><div class="lightfaceFooter" style="display: block;">
+
+<label class="lightfaceblue"><input onclick="init();$('#regis').hide();" type="button" value="Replay"/></label>
+ </div><div style="visibility: hidden; opacity: 0; top: 26px;" class="lightfaceOverlay">&nbsp;</div></div></td>
+ <td class="centerRight opac"></td></tr>
+ <tr><td class="bottomLeft opac"></td>
+ <td class="bottomCenter opac"></td>
+ <td class="bottomRight opac"></td></tr>
+ </tbody>
+ </table>
+<div style="clear:both"></div>
+</div>
+<br/>
+ <center>
+<br/>
+<div class="buttons">
+<button class="button-green" onclick="init();$('iframe').each(function(){$(this).attr('src', $(this).attr('src'));});">Replay</button>
+ <button class="button-red" onclick="music(this)">Sound: Off</button></div>
+<noindex><div style="color:#000"></div></noindex>
+</center>
+
+<script async type="text/javascript" src="jquery.js"></script>
+<script async type="text/javascript" src="lines.min.js?v=12"></script>
+
+</body>
+</html>
